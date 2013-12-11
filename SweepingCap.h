@@ -19,15 +19,17 @@
 class SweepingCap
 {
 	public:
-        SweepingCap();
-		SweepingCap(int whichTimer);
+        SweepingCap(unsigned char howManyFrequencies);
+		SweepingCap(int whichTimer, unsigned char howManyFrequencies);
 
-        void setup();
-		void sweep(int freq);
+        void            setup();
+		void            sweep(int freq);
+        unsigned char   getNumFrequencies();
 	private:
         
-		int timer;
-        bool allTimers;
+		int             timer;
+        bool            allTimers;
+        unsigned char   numFrequencies;
 		
 	
 };

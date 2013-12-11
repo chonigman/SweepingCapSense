@@ -11,16 +11,18 @@
 #define CHK(x,y) (x & (1<<y))           	// |
 #define TOG(x,y) (x^=(1<<y))            	//-+
 
-SweepingCap::SweepingCap()
+SweepingCap::SweepingCap(unsigned char howManyFrequencies)
 {
     timer = 0;
     allTimers = true;
+    numFrequencies = howManyFrequencies;
 }
 
-SweepingCap::SweepingCap(int whichTimer)
+SweepingCap::SweepingCap(int whichTimer, unsigned char howManyFrequencies)
 {
 	timer = whichTimer;
     allTimers = false;
+    numFrequencies = howManyFrequencies;
 	
 }
 
@@ -161,4 +163,9 @@ void SweepingCap::sweep(int freq)
 	
 	delayMicroseconds(1);
 	
+}
+
+unsigned char SweepingCap::getNumFrequencies()
+{
+    return numFrequencies;
 }

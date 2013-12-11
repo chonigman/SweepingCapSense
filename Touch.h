@@ -13,7 +13,6 @@ class Touch
 {
   public:
     Touch(unsigned char pin);
-    Touch(unsigned char pin, unsigned char frequencies);
     unsigned char   getTopPoint();
     void            setTopPoint(unsigned char tp);
     uint16_t        getTopValue();
@@ -22,7 +21,6 @@ class Touch
     void            setResults(uint16_t i, float v);
     uint16_t        getResults(uint16_t i);
     void            reset();
-    unsigned char   getNumFrequencies();
     unsigned char   getPin();
     uint16_t        readPin();
     uint16_t        getValue();
@@ -33,7 +31,6 @@ class Touch
     uint16_t        topValue;
     uint16_t        interpolatedValue;
     uint16_t        results[180];
-    unsigned char   numFrequencies;
     uint16_t        value;
     
   

@@ -11,28 +11,10 @@
 Touch::Touch( unsigned char pin )
 {
     mPin = pin;
-    numFrequencies = 120;
-    for( int i = 0; i < numFrequencies; i++ )
+    
+    for( int i = 0; i < sizeof(results); i++ )
     {
     	results[i] = 0;	
-    }
-    topPoint = 0;
-    topValue = 0;
-    interpolatedValue = 0;
-    
-}
-
-Touch::Touch( unsigned char pin, unsigned char frequencies )
-{
-    
-    mPin = pin;
-    if(numFrequencies < 180)
-        numFrequencies = frequencies;
-    else numFrequencies = 180;
-    
-    for( int i = 0; i < numFrequencies; i++ )
-    {
-        results[i] = 0;
     }
     topPoint = 0;
     topValue = 0;
@@ -96,9 +78,4 @@ void Touch::reset()
 {
     topPoint = 0;
     topValue = 0;
-}
-
-unsigned char Touch::getNumFrequencies()
-{
-    return numFrequencies;
 }
