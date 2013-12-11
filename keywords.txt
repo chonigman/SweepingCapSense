@@ -1,0 +1,15 @@
+SweepingCap	KEYWORD1
+sweep		KEYWORD2
+Touch	KEYWORD1
+getTopPoint	KEYWORD2
+setTopPoint	KEYWORD2
+getTopValue	KEYWORD2
+setTopValue	KEYWORD2
+interpolate	KEYWORD2
+setResults	KEYWORD2
+getResults	KEYWORD2
+getPin	KEYWORD2
+reset	KEYWORD2
+getNumFrequencies	KEYWORD2
+readPin	KEYWORD2
+getValue	KEYWORD2
