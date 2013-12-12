@@ -1,20 +1,22 @@
 # SweepingCapSense Library for Arduino
-This library implements and expands upon [DZL's](http://dzlsevilgeniuslair.blogspot.se) version of *Swept Frequency Capacitive Sensing* as described in the Disney Research project known as *Touché*. It expands upon it by implementing multiple timers simultaneously which presumably allows for more sensors to be used as well. This library must also credit [Mads Hobye](http://hobye.dk) and his [instructable](http://www.instructables.com/id/Touche-for-Arduino-Advanced-touch-sensing/?ALLSTEPS) on implementing DZL's technique. 
+This library implements and expands upon [DZL's](http://dzlsevilgeniuslair.blogspot.se) version of *Swept Frequency Capacitive Sensing* as described in the Disney Research project known as *Touché*. It expands upon it by implementing multiple timers simultaneously which presumably allows for more sensors to be used as well. This library must also credit [Mads Hobye](http://hobye.dk) and his [instructable](http://www.instructables.com/id/Touche-for-Arduino-Advanced-touch-sensing/?ALLSTEPS) on implementing DZL's technique.
+
+*Note:* Only for Arduino Mega (other boards coming soon).
 
 ## Installation
-Git Cone or Download and place SweepingCapSense folder inside your Arduino/libraries folder. If you don't have an libraries folder create one (make sure it is lowercase) and place inside.
+Git Clone or Download and place SweepingCapSense folder inside your Arduino/libraries folder. If you don't have a libraries folder create one (make sure it is lowercase) and place this library inside inside.
 
 ## Required Components
 
-**Resistors:** 10k, 1M, and 3.3k
-**Capcitors:** 100pf, 10nf (.01uf)
-**Diode:** 1N4148
-**Inductor/Coil:** 10mH
-**Object:** Plant, Water Bottle, pretty much any conductive object
+* **Resistors:** 10k, 1M, and 3.3k
+* **Capcitors:** 100pf, 10nf (.01uf)
+* **Diode:** 1N4148
+* **Inductor/Coil:** 10mH
+* **Object:** Foil,Plant, Water Bottle, pretty much any conductive object
 
 ## Circuit Diagram
 
-[Circuit Diagram](http://www.instructables.com/file/FR73R4DH2MYISBD) using an Arduino Uno (I believe)
+[Circuit Diagram](http://www.instructables.com/file/FR73R4DH2MYISBD)
 
 The send pin you use depends which Arduino and which timer you use. 
 
@@ -36,6 +38,18 @@ Timer 1 uses Digi Pin 11 but also controls Pin 12.
 Timer 3 uses Digi Pin 5 but also controls Pin 2 and 3.
 Timer 4 uses Digi Pin 6 but also controls Pin 7 and 8.
 Timer 5 uses Digi Pin 46 but also controls Pin 45 and 44.
+
+### Methods
+* **SweepingCap(unsigned char howManyFrequencies)**
+> Constructor - turns on all 4 16bit timers and sets the number of frequencies to be swept.
+* **SweepingCap(int whichTimer, unsigned char howManyFrequencies)**
+> Constructor (overloaded) - turns on one timer and sets frequencies to be swept.
+* **setup()**
+> Setup method, does all the actual setup for the timer pins to be used as waveform generators. 
+* **sweep(int freq)**
+> Main method, uses bit shifting methods to change the frequency on the waveform. 
+* **getNumFrequencies()**
+> Returns number of frequencies, to be used when setting up the iterator for sweeping. Max frequencies is 200.
 
 ## Touch.h
 
