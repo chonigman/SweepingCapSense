@@ -27,9 +27,55 @@ This library is made up of two classes **SweepingCap** and **Touch**. To use you
 ## SweepingCap.h
 The **SweepingCap** class handles the *Swept Frequency* aspect of *Swept Frequency Capacitive Sensing*. It does so by using the hardware timers on the Arduino to generate a waveform at frequencies from 1.5Khz to 3.5Mhz. The class itself is fairly simple, the bulk of the code being several bit-shifting functions that handle the waveform generation on the timers. 
 
-When instantiating you call **SweepingCap()**, which sets up all 4 timers of the Arduino Mega, or **SweepingCap(int )** to set up only one timer at a time. When doing the latter please note that the 16 bit timers on the Mega are 1, 3, 4, and 5. I purposefully  made it work with the specific timer number as a reinforcement of the  knowledge that those timers are the 16 bit timers available. 
+When instantiating you call **SweepingCap(unsigned char )**, which sets up all 4 timers of the Arduino Mega and sets the number of frequencies to sweep (200 max), or **SweepingCap(int , unsigned char )** to set up only one timer and the number of frequencies. When doing the latter please note that the 16 bit timers on the Mega are 1, 3, 4, and 5. I purposefully  made it work with the specific timer number as a reinforcement of the knowledge that those timers are the 16 bit timers available. Other Arduino Boards will be added in the future.
 
-In setup you simply call **.setup()** on your SweepingCap object. Inside the main loop you will need a for loop which acts as the frequency sweep, and you pass in the iterator to the **.sweep(int freq)** function, where all the bit shifting takes place. 
+In the setup you simply call **.setup()** on your SweepingCap object. Inside the main loop you will need a for loop which acts as the frequency sweep. You can use method **.getNumFrequencies** to setup the for loop and pass in the iterator to the **.sweep(int freq)** function, where all the bit shifting takes place. 
+
+### Notes on Timers
+Timer 1 uses Digi Pin 11 but also controls Pin 12. 
+Timer 3 uses Digi Pin 5 but also controls Pin 2 and 3.
+Timer 4 uses Digi Pin 6 but also controls Pin 7 and 8.
+Timer 5 uses Digi Pin 46 but also controls Pin 45 and 44.
+
+## Touch.h
+
+Class acts as a container for touch data. Instantiate **Touch** class by setting the Analog Pin you want to use. 
+*Touch* touch(0); // sets read pin to Analog Pin 0. 
+
+### Methods
+
+* **readPin()**
+> Performs an *analogRead()* on pin set by constructor. Stores value into private variable and returns the value as a 16 bit integer when called.
+
+* **getValue()**
+> Returns value stored when **readPin()** is called. uni16_t
+
+* **setResults(uint16_t i, uint16_t v)**
+> Set result value in results array, position and value
+
+* **getResults(uint16_t i)**
+> Get result at i position
+
+* **setTopPoint( unsigned char tp )**
+> Set Resonant Peak frequency
+
+* **setTopValue(unit16_t tv)**
+> Set Top Value of resonant peak
+
+* **getTopPoint()**
+> Returns stored top point
+
+* **getTopValue()**
+> Returns stored top value
+
+* **interpolate()**
+> Returns an interpolated top value
+
+* **reset()**
+> Reset *topPoint* and *topValue* 
+
+* **getPin()**
+> Return pin number
 
 
 

@@ -18,7 +18,7 @@ class Touch
     uint16_t        getTopValue();
     void            setTopValue(uint16_t tv);
     uint16_t        interpolate();
-    void            setResults(uint16_t i, float v);
+    void            setResults(uint16_t i, uint16_t v);
     uint16_t        getResults(uint16_t i);
     void            reset();
     unsigned char   getPin();

@@ -1,5 +1,5 @@
 SweepingCap	KEYWORD1
-sweep		KEYWORD2
+sweep	KEYWORD2
 Touch	KEYWORD1
 getTopPoint	KEYWORD2
 setTopPoint	KEYWORD2

@@ -64,7 +64,7 @@ uint16_t Touch::interpolate()
   return interpolatedValue;
 }
 
-void Touch::setResults(uint16_t i, float v)
+void Touch::setResults(uint16_t i, uint16_t v)
 {
 	results[i] = v;
 }
