@@ -12,10 +12,10 @@ Touch::Touch( unsigned char pin )
 {
     mPin = pin;
     
-    for( int i = 0; i < sizeof(results); i++ )
-    {
-    	results[i] = 0;	
-    }
+//    for( int i = 0; i < sizeof(results); i++ )
+//    {
+//    	results[i] = 0;	
+//    }
     topPoint = 0;
     topValue = 0;
     interpolatedValue = 0;
@@ -60,18 +60,19 @@ void Touch::setTopValue( uint16_t tv )
 
 uint16_t Touch::interpolate()
 {
-  interpolatedValue = interpolatedValue * 0.5f + ((topPoint + results[topPoint]/results[topPoint+1]*results[topPoint-1]/results[topPoint]) * 10.0f) * 0.5f;
+//  interpolatedValue = interpolatedValue * 0.5f + ((topPoint + results[topPoint]/results[topPoint+1]*results[topPoint-1]/results[topPoint]) * 10.0f) * 0.5f;
   return interpolatedValue;
 }
 
 void Touch::setResults(uint16_t i, uint16_t v)
 {
-	results[i] = v;
+	//results[i] = v;
 }
 
 uint16_t Touch::getResults(uint16_t i)
 {
-	return results[i];	
+//	return results[i];
+    return 0;
 }
 
 void Touch::reset()

@@ -1,9 +1,9 @@
 /* SweepingCap.h Library for Sweeping Frequency Capacitance Touch Sensing
-   Created by Colin Honigman. November 2013
-   Based Illutron's take on Disney style capacitive touch sensing, using
-   only passive components. 
-   Released into the public domain.
-*/
+ Created by Colin Honigman. November 2013
+ Based Illutron's take on Disney style capacitive touch sensing, using
+ only passive components.
+ Released into the public domain.
+ */
 
 #ifndef SweepingCap_h
 #define SweepingCap_h
@@ -18,19 +18,21 @@
 
 class SweepingCap
 {
-	public:
-        SweepingCap(unsigned char howManyFrequencies);
-		SweepingCap(int whichTimer, unsigned char howManyFrequencies);
-
-        void            setup();
-		void            sweep(int freq);
-        unsigned char   getNumFrequencies();
-	private:
-        
-		int             timer;
-        bool            allTimers;
-        unsigned char   numFrequencies;
-		
+public:
+    SweepingCap(unsigned char howManyFrequencies);
+    SweepingCap(int whichTimer, unsigned char howManyFrequencies);
+    
+    void            setup();
+    void            sweep(int freq);
+    unsigned char   getNumFrequencies();
+    //void            setResults(d)
+private:
+    
+    int             timer;
+    bool            allTimers;
+    unsigned char   numFrequencies;
+    //uint16_t        results[200];
+    
 	
 };
 
