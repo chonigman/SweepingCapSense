@@ -30,7 +30,7 @@ class Touch
     unsigned char   topPoint;
     uint16_t        topValue;
     uint16_t        interpolatedValue;
-    //uint16_t        results[180];
+    uint16_t        results[180];
     uint16_t        value;
     
   
