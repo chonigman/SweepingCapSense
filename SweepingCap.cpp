@@ -21,7 +21,7 @@ SweepingCap::SweepingCap(unsigned char howManyFrequencies)
 
 SweepingCap::SweepingCap(int whichTimer, unsigned char howManyFrequencies)
 {
-	timer = whichTimer;
+    timer = whichTimer;
     allTimers = false;
     numFrequencies = howManyFrequencies;
 }
@@ -38,18 +38,18 @@ void SweepingCap::setup()
         pinMode(12, OUTPUT);
         
         TCCR3A=0b10000010;        //-Set up frequency generator
-  		TCCR3B=0b00011001;        //-+
-  		ICR3=110;
-  		OCR3A=55;
+        TCCR3B=0b00011001;        //-+
+        ICR3=110;
+        OCR3A=55;
         pinMode(2, OUTPUT);
         pinMode(3, OUTPUT);
-  		pinMode(5, OUTPUT);
+        pinMode(5, OUTPUT);
         
         TCCR4A=0b10000010;        //-Set up frequency generator
-  		TCCR4B=0b00011001;        //-+
-  		ICR4=110;
-  		OCR4A=55;
-  		pinMode(6, OUTPUT);
+        TCCR4B=0b00011001;        //-+
+        ICR4=110;
+        OCR4A=55;
+        pinMode(6, OUTPUT);
         
         TCCR5A=0b10000010;        //-Set up frequency generator
   		TCCR5B=0b00011001;        //-+
