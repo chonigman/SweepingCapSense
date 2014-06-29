@@ -1,6 +1,6 @@
 /* SweepingCap.h Library for Sweeping Frequency Capacitance Touch Sensing
  Created by Colin Honigman. November 2013
- Based Illutron's take on Disney style capacitive touch sensing, using
+ Based DZL's take on Disney style capacitive touch sensing, using
  only passive components.
  Released into the public domain.
  */

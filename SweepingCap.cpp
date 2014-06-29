@@ -1,5 +1,6 @@
 /* SweepingCap.cpp Library for Sweeping Frequency Capacitance Touch Sensing
- Created by Colin Honigman. November 2013
+ Based on DZL's Arduino port of the Touche project.
+ Library Created by Colin Honigman. November 2013
  Released into the public domain.
  */
 
