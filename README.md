@@ -1,7 +1,7 @@
 # SweepingCapSense Library for Arduino
 This library implements and expands upon [DZL's](http://dzlsevilgeniuslair.blogspot.se) version of *Swept Frequency Capacitive Sensing* as described in the Disney Research project known as *Touché*. It expands upon it by implementing multiple timers simultaneously which presumably allows for more sensors to be used as well. This library must also credit [Mads Hobye](http://hobye.dk) and his [instructable](http://www.instructables.com/id/Touche-for-Arduino-Advanced-touch-sensing/?ALLSTEPS) on implementing DZL's technique.
 
-*Note:* Only for Arduino Mega (other boards coming soon).
+*Note:* Only for Arduino Mega and Uno (atmega328 boards) (other boards coming soon).
 
 ## Installation
 Git Clone or Download and place SweepingCapSense folder inside your Arduino/libraries folder. If you don't have a libraries folder create one (make sure it is lowercase) and place this library inside inside.
